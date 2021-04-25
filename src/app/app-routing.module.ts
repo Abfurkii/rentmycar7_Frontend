@@ -18,7 +18,7 @@ const routes: Routes = [
   
   {path:"cars/rental/:carId",component:RentalComponent},
   {path:"cars/payment/:carId",component:PaymentComponent,canActivate:[LoginGuard]},
-
+ 
   {path:"login",component:LoginComponent},
   {path:"register",component:RegisterComponent}
 ];
