@@ -1,0 +1,36 @@
+#maindiv{
+    top: 20px;
+    bottom: 50px;
+}
+
+#month{
+    width: 75px;
+    
+    position: relative;
+    float: left;
+    top: 25px;
+    margin-left: -45px;
+
+}
+#year{
+    width: 75px;
+    float: left;
+    margin-top: -11px;
+    margin-left: 5px;
+}
+
+#date{
+    margin-left: 60px;
+}
+
+ #datetxt{
+    position: relative;
+     float: left; 
+    margin-left: 10px;
+    
+} 
+
+#cvv{
+    position: relative;
+    float: right;
+}

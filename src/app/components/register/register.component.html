@@ -1,0 +1,11 @@
+<div class="login">
+    <form [formGroup]="registerModel" class="form">
+      <h2>Kayıt ol</h2>
+        <input formControlName="firstName" type="text" placeholder="İsim">
+        <input formControlName="lastName" type="text" placeholder="Soyisim">
+        <input formControlName="email" type="email" placeholder="Email">
+        <input formControlName="password" type="password" placeholder="Şifre">
+      <input type="button" value="Sign In" class="submit" (click)="register()">
+    </form>
+  </div>
+  

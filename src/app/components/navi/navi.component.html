@@ -1,0 +1,46 @@
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid position">
+    <img class="mb-2" src="https://localhost:44325/images/DefaultImage.png" alt="logo" width="100" height="50"/>
+    <a class="navbar-brand mb-0 h1"  href="#" style="margin-left: 15px;">Rent MyCar 7</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" routerLinkActive="active" routerLink="cars">Araçlar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="brands">Markalar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="colors">Renkler</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="rentals">Kiralamalar</a>
+        </li>
+      </ul>
+
+      <div *ngIf="authControl==true" class="dropdown">
+        <button id="dropdownMenuButton1" type="button" class="btn btn-dark dropdown-toggle" style="opacity: 0.5;" data-bs-toggle="dropdown" aria-expanded="false">
+          <strong *ngIf="member">{{member.firstName}} {{member.lastName}}</strong>
+        </button>
+        <ul id="ul" class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><button type="button" class="dropdown-item">Rol</button></li>
+          <li><button type="button" class="dropdown-item">Profil</button></li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+          <li><button type="button" class="dropdown-item">Çıkış</button></li>
+        </ul>
+      </div>
+      <div *ngIf="authControl==false" class="dropdown">
+        <button type="button" routerLink="/login" class="btn btn-outline-light me-2">Giriş Yap</button>
+        <button type="button" routerLink="/register" class="btn btn-warning">Kayıt ol</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- dropdownMenu2 -->

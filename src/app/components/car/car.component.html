@@ -1,0 +1,41 @@
+<div class="mb-3">
+    <label for="filterText" class="form-label">Ürün ara</label>
+    <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText"
+        placeholder="Arama ifadesi giriniz">
+</div>
+<div *ngIf="filterText.length>1" class="alert alert-primary">
+    {{filterText}} arıyorsunuz..
+</div>
+
+<div *ngIf="error==false" class="album py-5 bg-light">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"
+            *ngFor="let car of carDetailsWithImage | carFilterPipe:filterText"
+            style="display: inline-block; margin-right: 8px; margin-bottom: 8px;">
+            <div class="col">
+                <div class="card shadow-sm" style="width: 20rem;">
+                    <div class="card-body">
+                        <img src="https://localhost:44325/Images/{{car.imagePath}}" class="card-img-top" alt="...">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{car.brandName}} | {{car.modelYear}}</h5>
+                        <h4 class="card-text">{{car.dailyPrice}}₺ </h4>
+                        <a routerLink="/cars/car-detail/{{car.carId}}" class="btn btn-primary">Detaylar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" >
+    <div class="row" >
+        <div class="col-md-4"></div>
+        <div *ngIf="error==true" class="col-md-4">
+            <img src="https://www.flaticon.com/svg/vstatic/svg/458/458594.svg?token=exp=1618945617~hmac=01266e8fd358b4284e2fc2fa66009c1f"
+             class="rounded" alt="...">
+            <p>Araç bulunamadı!  <a href="#" class="text-secondary">  Geri Dön</a></p>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
