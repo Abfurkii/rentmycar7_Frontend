@@ -3,11 +3,16 @@ body {
   height: 100%;
 }
 
+
 body {
   display: flex;
   align-items: center;
-  padding-top: 40px;
+  padding-top: 80px;
   padding-bottom: 40px;
+  position: relative;
+  float: left;
+  left: 300px;
+  background: transparent;
 }
 
 .form-signin {
@@ -15,6 +20,7 @@ body {
   max-width: 330px;
   padding: 15px;
   margin: auto;
+  
 }
 
 .form-signin .checkbox {
@@ -35,4 +41,8 @@ body {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+#emailPassword{
+  top: 4px;
 }

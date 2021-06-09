@@ -22,7 +22,7 @@
             <div class="inputbox mt-3 mr-2">
               <span>Kart Numarası</span>
               <input
-                formControlName="creditCartNumber"
+                formControlName="creditCardNumber"
                 type="text"
                 name="name"
                 class="form-control"
@@ -58,13 +58,12 @@
               <div id="cvv" class="inputbox mt-3 mr-2">
                 <span>Güvenlik Kodu</span>
                 <input
-                  formControlName="cvv"
+                  formControlName="ccv"
                   type="text"
                   name="name"
                   class="form-control"
                   required="required"
-                  placeholder="CVV"
-                />
+                  placeholder="CVV"/>
               </div>
             </div>
           </div>
@@ -74,10 +73,8 @@
     <div class="card-footer">
       <div class="row">
         <button class="btn btn-success" (click)="rentACar()">
-          <strong>   Ödeme Yap</strong>
+          <strong> {{payment.totalPrice | currency: "₺" }}  Ödeme Yap</strong>
         </button>
       </div>
     </div>
   </div>
-
-  <!-- Ödeme yap içine yazılacak  {{payment.totalPrice | currency: "₺" }} amountOfPayment | currency: "₺" -->

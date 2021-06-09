@@ -1,0 +1,91 @@
+<body class="bg-light">
+
+    <div class="container">
+        <main>
+            <div class="py-5 text-center">
+                <img class="d-block mx-auto mb-4" src="https://localhost:44325/images/DefaultImage.png" alt="" width="120"
+                    height="57">
+                <h2>Araba Ekle</h2>
+                <p class="lead">Bu alanda araba ekleme işlemi yapılır. Zorunlu bilgi yerlerini doldurmalısınız. </p>
+            </div>
+
+            <div class="row g-5">
+                <div id="colm" class="col-md-7 col-lg-10">
+                    <h4 class="mb-3">Araba bilgileri</h4>
+                    <form [formGroup]="carAddForm" class="needs-validation" novalidate>
+                        <div class="row g-3">
+                            
+
+                            <div class="col-12">
+                                <label for="modelYear" class="form-label">Model Yılı</label>
+                                <input type="text" formControlName="modelYear" class="form-control" id="modelYear" placeholder="2016"
+                                    required>
+                                <div class="invalid-feedback">
+                                    Please enter car's model year.
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="dailyPrice" class="form-label">Fiyat</label>
+                                <input type="number" formControlName="dailyPrice" class="form-control" id="dailyPrice" placeholder="100">
+                            </div>
+
+                            <div class="col-12">
+                                <label for="description" class="form-label">Açıklama</label>
+                                <input type="text" class="form-control" formControlName="description" id="description" placeholder="Sedan">
+                                <div class="invalid-feedback">
+                                    Please enter car's description.
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="country" class="form-label">Marka</label>
+                                <select class="form-select" id="country" required>
+                                    <option value="">Seç...</option>
+                                    <option formControlName="brandId" [value]="brand.id" *ngFor="let brand of brands">{{brand.brandName}}</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please select a valid country.
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="state" class="form-label">Renk</label>
+                                <select class="form-select" id="state" required>
+                                    <option value="">Seç...</option>
+                                    <option formControlName="colorId" [value]="color.id" *ngFor="let color of colors">{{color.colorName}}</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please provide a valid state.
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="zip" class="form-label">Araç görseli</label>
+                                <input type="text" class="form-control" id="zip" placeholder="" required>
+                                <div class="invalid-feedback">
+                                    Car image required.
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <br>
+
+                        <button class="w-100 btn btn-primary btn-lg" type="submit" (click)="addCar()">Ekle</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <footer class="my-5 pt-5 text-muted text-center text-small">
+            <p class="mb-1">&copy; 2017–2021 Rent MyCar 7</p>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a routerLink="#">Privacy</a></li>
+                <li class="list-inline-item"><a routerLink="#">Terms</a></li>
+                <li class="list-inline-item"><a routerLink="#">Support</a></li>
+            </ul>
+        </footer>
+    </div>
+
+</body>

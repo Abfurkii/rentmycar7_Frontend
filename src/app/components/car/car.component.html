@@ -1,18 +1,18 @@
 <div class="mb-3">
-    <label for="filterText" class="form-label">Ürün ara</label>
-    <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText"
+    <label id="fiterTextHeader" for="filterText" class="form-label"><h5>Ürün ara</h5> </label>
+    <input type="text" [(ngModel)]="filterText" class="form-control form-control-lg" id="filterText"
         placeholder="Arama ifadesi giriniz">
 </div>
 <div *ngIf="filterText.length>1" class="alert alert-primary">
     {{filterText}} arıyorsunuz..
 </div>
 
-<div *ngIf="error==false" class="album py-5 bg-light">
-    <div class="container">
+<div id="first" *ngIf="error==false" class="album py-5 ">
+    <div id="container" class="container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"
             *ngFor="let car of carDetailsWithImage | carFilterPipe:filterText"
             style="display: inline-block; margin-right: 8px; margin-bottom: 8px;">
-            <div class="col">
+            <div id="container3" class="col">
                 <div class="card shadow-sm" style="width: 20rem;">
                     <div class="card-body">
                         <img src="https://localhost:44325/Images/{{car.imagePath}}" class="card-img-top" alt="...">
@@ -39,3 +39,6 @@
         <div class="col-md-4"></div>
     </div>
 </div>
+
+
+<!-- bg-light -->

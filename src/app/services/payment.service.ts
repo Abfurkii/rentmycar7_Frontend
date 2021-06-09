@@ -21,8 +21,4 @@ export class PaymentService {
     return this.httpClient.post<ResponseModel>(this.apiUrl+"/add",payment)
   }
 
-  setRental(){
-    
-  }
-
 }

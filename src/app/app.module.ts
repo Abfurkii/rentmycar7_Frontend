@@ -23,6 +23,7 @@ import { LoginComponent } from './components/login/login.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { PaymentComponent } from './components/payment/payment.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { CarAddComponent } from './components/car-add/car-add.component';
 
 
 
@@ -42,6 +43,7 @@ import { FooterComponent } from './components/footer/footer.component';
     RegisterComponent,
     PaymentComponent,
     FooterComponent,
+    CarAddComponent,
   ],
   imports: [
     BrowserModule,

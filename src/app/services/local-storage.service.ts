@@ -10,6 +10,7 @@ export class LocalStorageService {
   get(key:string){
     return localStorage.getItem(key);
   }
+  
   setItem(key:string, data:any){
     localStorage.setItem(key,data)
   }

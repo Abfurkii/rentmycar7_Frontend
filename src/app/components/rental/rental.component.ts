@@ -114,12 +114,10 @@ export class RentalComponent implements OnInit {
   }
   setCustomerId(customerId: string) {
     this.customerId = +customerId;
-    console.log(this.customerId);
   }
   getCustomer() {
     this.customerService.getCustomers().subscribe((response) => {
       this.customers = response.data;
-      console.log(response.data);
     });
   }
 

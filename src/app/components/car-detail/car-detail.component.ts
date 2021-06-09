@@ -17,6 +17,8 @@ export class CarDetailComponent implements OnInit {
   carImages:CarImage[]=[];
   imageLoaded:boolean = false;
   dataLoaded:boolean=false;
+  
+  i:number=0;
 
   carDetailsWithImages:CarDetail[];
 
@@ -67,5 +69,7 @@ export class CarDetailComponent implements OnInit {
       return "carousel-item";
     }
   }
+
+  
 
 }

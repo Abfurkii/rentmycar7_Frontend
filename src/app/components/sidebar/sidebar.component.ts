@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LocalStorageService } from 'src/app/services/local-storage.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,10 +8,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
-
-  constructor(private router:Router) { }
+ 
   brandId:string="";
   colorId:string="";
+  constructor(private router:Router,
+    private localStorage:LocalStorageService) { }
 
   ngOnInit(): void {
   }
@@ -40,6 +42,13 @@ export class SidebarComponent implements OnInit {
 
   clearRoute(){
     this.router.navigate(['cars/']);
+  }
+
+  canView():boolean{
+    if(this.localStorage.get("token")){
+      return true;
+    }
+    return false;
   }
 
 }

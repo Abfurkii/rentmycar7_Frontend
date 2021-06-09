@@ -1,7 +1,7 @@
 export interface CreditCard{
-    id:number
+    id?:number
     memberId:number
-    Name:string
+    name:string
     creditCardNumber:string
     month:number
     year:number
